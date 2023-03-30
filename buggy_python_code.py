@@ -1,6 +1,6 @@
+import urllib
 import yaml
 import flask
-import urllib
 
 app = flask.Flask(__name__)
 
@@ -43,12 +43,14 @@ def load_yaml(filename):
     stream = open(filename, encoding='utf-8')
     deserialized_data = yaml.load(stream, Loader=yaml.Loader) #deserializing data
     return deserialized_data
-    
+
+
 def authenticate(PASSWORD):
     """function for auth"""
     # Assert that the PASSWORD is correct
     assert PASSWORD == "Iloveyou", "Invalid PASSWORD!"
     print("Successfully authenticated!")
+
 
 if __name__ == '__main__':
     print("Vulnerabilities:")
